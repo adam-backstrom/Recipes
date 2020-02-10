@@ -1,7 +1,7 @@
-DROP DATABASE  IF EXISTS `spring_security_demo_bcrypt`;
+/*DROP DATABASE  IF EXISTS `spring_security_demo_bcrypt`;*/
 
-CREATE DATABASE  IF NOT EXISTS `spring_security_demo_bcrypt`;
-USE `spring_security_demo_bcrypt`;
+CREATE DATABASE IF NOT EXISTS `security_db`;
+USE `security_db`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -11,12 +11,12 @@ CREATE TABLE `users` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
 INSERT INTO `users` 
 VALUES 
-('john','{bcrypt}$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1),
-('mary','{bcrypt}$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1),
+('quik','{bcrypt}$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1),
+('rosanna','{bcrypt}$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1),
 ('adam','{bcrypt}$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K',1);
+
 
 DROP TABLE IF EXISTS `authorities`;
 CREATE TABLE `authorities` (
@@ -28,10 +28,8 @@ CREATE TABLE `authorities` (
 
 INSERT INTO `authorities` 
 VALUES 
-('john','ROLE_EMPLOYEE'),
-('mary','ROLE_EMPLOYEE'),
-('mary','ROLE_MANAGER'),
+('quik','ROLE_EMPLOYEE'),
+('rosanna','ROLE_EMPLOYEE'),
+('rosanna','ROLE_MANAGER'),
 ('adam','ROLE_EMPLOYEE'),
 ('adam','ROLE_ADMIN');
-
-
